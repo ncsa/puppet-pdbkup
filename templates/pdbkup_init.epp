@@ -1,0 +1,8 @@
+<%- | String $runcmd,
+    | -%>
+#!/bin/bash
+
+# Random pause, ease load of multiple hosts starting at the same time
+sleep $[ ( $RANDOM % 300 ) + 1 ]s
+
+"<%= $runcmd %>" bkup -d init
